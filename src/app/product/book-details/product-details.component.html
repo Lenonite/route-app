@@ -1,0 +1,28 @@
+
+<div *ngIf="(book$ |async) as book">
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <img [src]="book.imageUrl" class="img-fluid" alt="">
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>{{book.title}}</h4>
+          <div class="card-body">
+            <div class="card-title">Written by -{{book.authorName}}</div>
+            <div class="card-text">{{book?.category?.name}}</div>
+            <div class="card-text">It costs {{book.price}}</div>
+            <div class="card-text">Published By -{{book.publisher}}</div>
+            <div class="card-text">Published In -{{book.yearPublished}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div>
+  <button class="btn btn-primary mx-2" (click)="addToCart()">AddToCart</button>
+  <button class="btn btn-success mx-2" (click)="goCartView()">ViewCart</button>
+  <button class="btn btn-info mx-2" (click)="goHome()">ContinueShopping</button>
+</div>
